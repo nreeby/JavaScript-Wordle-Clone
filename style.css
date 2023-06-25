@@ -1,0 +1,132 @@
+*{
+    box-sizing:border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.wordle{
+    position: relative;
+    width:50%;
+}
+.header{
+    text-align: center;
+    padding-top: 2%;
+    border-bottom: 2px solid;
+    border-color: black;
+}
+.title{
+    margin-block-start: 5%;
+    margin-block-end: 4%;
+}
+
+.game-end{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: lightgray;
+    width: 75%;
+    height: 25%;
+    left:12.5%;
+    right:12.5%;
+}
+
+.game-end-ani{
+    animation: end-pop-up 2s linear;
+}
+
+@keyframes end-pop-up{
+    0%{
+        transform: scale(0);
+    }
+    25%{
+        transform:scale(1.5)
+    }
+    50%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(0.75);
+    }
+    100%{
+        transform: scale(1);
+    }
+
+}
+
+
+
+
+.restart{
+    text-align: center;
+}
+
+.guesses{
+    margin-block-start: 10%;
+}
+.guess-row{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter-input{
+    /*color: hotpink;*/
+    text-align: center;
+    font-size: 150%;
+    height: 1.5em;
+    width: 1.5em;
+    margin: 0.5em;
+    border: 0.1em solid grey;
+    background-color: #f1f1f1ff;
+}
+.no-letter{
+    color: white;
+    background-color: grey;
+    border-color: lightgrey;
+}
+.wrong-location{
+    color: white;
+    background-color: orange;
+    border-color: lightgrey;
+}
+.correct-letter{
+    color: white;
+    background-color: green;
+    border-color: lightgrey;
+}
+.not-a-word{
+    animation-name: wrong-fade;
+    animation-duration: 4s;
+}
+@keyframes wrong-fade{
+    from{border-color: red;}
+    to{border-color: grey;}
+}
+.loading{
+    text-align: center;
+}
+@keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+.loading-Icon{
+    font-size: 200%;
+    animation: spin 1.25s infinite linear;
+}
+
+.rainbow{
+    animation:title-colour 5s infinite alternate;
+}
+@keyframes title-colour {
+    0% {color: crimson;}
+    20% {color: orange;}
+    40% {color: goldenrod;}
+    60% {color: green;}
+    80% {color: DarkBlue;}
+    100% {color: purple}
+}
